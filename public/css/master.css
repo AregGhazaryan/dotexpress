@@ -1,0 +1,296 @@
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+a{
+  outline:none;
+}
+
+option:not(:checked) {
+  color: black; /* prevent <option>s from becoming transparent as well */
+}
+
+.navbar{
+  background: rgb(141,0,255);
+  background: rgba(141,0,255,1) !important;
+  padding-left:10%;
+  padding-right:10%;
+}
+
+.nav-link, .navbar-brand{
+    color:white !important;
+}
+
+.content{
+  padding-top:100px;
+  min-height:700px;
+}
+
+
+.categories{
+  border:1px solid grey;
+}
+
+
+.page-footer{
+  display: block;
+  color:white;
+  background: rgb(141,0,255);
+  padding-left:10%;
+  padding-right:10%;
+  position: relative;
+  bottom:0;
+}
+
+.page-footer a{
+  color:white;
+}
+
+.index-jumbo{
+  padding-top:200px;
+  height:100%;
+  margin-bottom:0px;
+}
+
+.navbar-toggler{
+  transition:0.25s;
+  color:white !important;
+}
+
+.navbar-toggler:focus{
+  outline:none;
+}
+
+.navbar-toggler:hover{
+  transition:0.25s;
+  border-color:white;
+  color:white;
+}
+
+.cat-menu{
+  list-style: none;
+  margin-bottom:0;
+}
+
+.cat-menu a{
+    color:white;
+}
+
+.product-card{
+  display:block;
+  float:left;
+  margin:10px;
+  width:300px;
+  height: 590px;
+}
+
+
+.card-head img{
+    object-fit: contain;
+}
+
+.product-img{
+  display: block;
+  height:100%;
+  width:100%;
+  float:left;
+  margin: auto;
+  object-fit: contain;
+}
+
+.product-list {
+  display: block;
+    width:100%;
+    float:left;
+}
+
+.carousel-inner{
+    width: 600px !important;
+    height: 500px !important;
+      display: block;
+}
+
+.carousel-item img{
+  overflow: hidden;
+}
+
+.product-list li{
+  display:block;
+}
+
+.content{
+  padding:50px;
+  overflow: hidden;
+}
+
+.borderless {
+  border-top: 0 none;
+}
+
+.carousel-control-prev-icon {
+ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234000ff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234000ff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+
+.product-container .card{
+  height:600px;
+}
+
+
+.carousel-item{
+  width:100%;
+  height:100%;
+}
+
+.carousel{
+  padding:40px;
+}
+.card-head{
+  height:296px;
+}
+.card-head>img{
+  height:100%;
+  width: 100%;
+}
+
+.links{
+  width: 100%;
+  float:right;
+}
+
+.create-form{
+  margin:0 auto;
+  width:600px;
+}
+
+.form-mini{
+  width:44%;
+margin: 5px 3%;
+  float:left;
+}
+
+.custom-file{
+  margin-top:10px;
+}
+
+.form-button{
+  margin:0 auto;
+}
+
+.mapdiv{
+  background:#f3f3f3;
+  padding-top:20px;
+  border-radius: 10px;
+  height:500px;
+}
+
+.map{
+  border-radius: 10px;
+}
+.nav-link{
+  transition:0.2s;
+}
+
+.nav-link:hover{
+  transition:0.2s;
+  background-color:white !important;
+  border-radius:5px;
+  color:rgb(141,0,255)!important;
+}
+
+
+.search{
+  border:none;
+}
+
+
+
+.none{
+  background:none;
+  border:none;
+  background-color: none;
+  font-family: Nunito,sans-serif;
+  color:white;
+}
+
+.btn-search{
+    border:none;
+    transition:0.2s;
+    color: rgb(141,0,255) !important;
+    background-color:white;
+}
+
+.btn-search:hover{
+  transition:0.2s;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.create{
+  background-color: rgb(141,0,255);
+  border:none;
+}
+
+.create:hover{
+  background-color:rgb(120,0,255);
+}
+
+.create:active{
+  background-color:rgb(120,0,255)!important;
+}
+
+.heart{
+  background-color: #ff007f !important;
+}
+
+.heart:hover{
+  background-color: red !important;
+}
+
+.last-list{
+  border-bottom:none;
+}
+
+.fav-page th{
+  border-top:none;
+}
+
+.profile-content{
+    width: 100%;
+}
+
+
+.nav-tabs .nav-link{
+  color: rgb(141,0,255) !important;
+}
+
+.networks{
+  list-style-type: none;
+}
+
+.net-item{
+  float:left;
+  margin:0 20px;
+  font-size:27pt;
+  width: 50px;
+  height:50px;
+  text-align: center;
+  transition:0.2s;
+}
+.net-item i{
+  color:white;
+}
+
+.net-item:hover{
+  transition:0.2s;
+  border-radius:50%;
+  -webkit-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.75);
+  color:rgb(141,0,255) !important;
+}
