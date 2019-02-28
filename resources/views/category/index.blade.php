@@ -36,7 +36,7 @@
       <img class="card-img-top" src="/storage/products/{{$post->image}}" alt="Card image cap">
           </div>
           <div class="card-body">
-            <h5 class="card-title"><a href="/product/{{$post->unique_id}}"/>{{$post->name}}</a></h5>
+            <h5 class="card-title"><a href="/product/{{$post->unique_id}}"/>{{str_limit($post->name,25)}}</a></h5>
             <p class="card-text">{{$post->price}}$</p>
             <p class="card-text">@if($post->stock==0)<span style="color:red;">Not Available </span>@else Stock : {{$post->stock}}@endif</p>
           </div>
@@ -54,6 +54,9 @@
       </div>
 
   @endforeach
+  <div class="links">
+    {{$posts->links()}}
+  </div>
   @endif
 </div>
 @endsection

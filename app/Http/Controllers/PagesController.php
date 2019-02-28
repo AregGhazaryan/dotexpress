@@ -23,7 +23,7 @@ $this->middleware('auth', ['except' => ['index', 'locations', 'message','terms',
 }
 
   public function index(){
-    $post= Post::where('is_approved', 1)->paginate(20);
+    $post= Post::where('is_approved', 1)->paginate(12);
     return view('pages.index')->with('posts', $post);
   }
 

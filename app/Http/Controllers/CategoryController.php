@@ -35,7 +35,7 @@ class CategoryController extends Controller
 
     switch ($name) {
       case $name == 'electronics':
-        $posts= Post::where("category","electronics")->paginate(10);
+        $posts= Post::where("category","electronics")->paginate(12);
           $count= $posts->count();
         return view('category.index')->with('posts',$posts)->with('count',$count);
         break;
