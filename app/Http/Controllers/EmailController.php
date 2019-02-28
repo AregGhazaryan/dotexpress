@@ -15,15 +15,13 @@ class EmailController extends Controller
       return redirect(url()->previous())->with('error', 'Unauthorized access');
     }else{
       $title = "Order Confirmation";
-      $content = "Your order has been successfully shipped";
+      $content = "Your order has been successfully accepted";
       Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message)
       {
 
-          $message->from('dotexpress@gmail.com', 'Christian Nwamba');
+          $message->from('dotexpress@gmail.com', 'Support');
           $message->subject('DotExpress Order Confirmation');
-          $message->to('areg.areg51@gmail.com');
-
-
+          $message->to('');
       });
     }
 

@@ -71,6 +71,7 @@
                <option>{{$i}}</option>
              @endfor
              </select>
+           </form>
   @else
 
   @endif
@@ -85,14 +86,13 @@
         @if($post->by !== Auth::user()->email)
 
           <button type="submit" class="col btn btn-primary"><i class="fas fa-cart-plus mr-2"></i>Add To Cart</button>
-        </form>
 
             <a href="/wish/{{$post->unique_id}}" class="btn btn-primary heart mr-2 ml-2 text-center  m-0"><i class="far fa-heart mr-2"></i>Add To Wish List</a>
           @endif
         @endif
         @if(@Auth::user()->is_admin || $post->by === @Auth::user()->email)
           <form class='col text-center p-0' action="{{ action('PostsController@destroy' , $post->id)}}" onsubmit="return confirm('Are you sure you want to delete ?');" class="text-right" method="post">
-            <button class="btn btn-danger w-100"><i class="fas fa-trash-alt" style="color:white;"></i>  <input type='submit' class='none' name="_method"  value="Delete"></button>
+          <button class="btn btn-danger"><input type='submit' class="none" name="_method"  value="Delete"></button>
 <input type="hidden" name="_method" value="delete" />
             {{ csrf_field() }}
           </form>

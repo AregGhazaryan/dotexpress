@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Jobs\SendEmailJob;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -64,11 +67,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+      $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'type' => $data['type'],
         ]);
+        $email = $data['email'];
+        $job = (new SendEmailJob($email))->delay(Carbon::now()->addSeconds(5));
+        dispatch($job);
+
+        return $user;
     }
 }

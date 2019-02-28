@@ -10,6 +10,7 @@
           {{ session('success') }}
       </div>
     @endif
+
     @guest
     <div class="jumbotron text-center index-jumbo">
       <h1 class="display-4">Welcome To DotExpress</h1>

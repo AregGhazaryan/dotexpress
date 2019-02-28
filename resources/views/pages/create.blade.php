@@ -1,16 +1,26 @@
 @extends('layouts.core')
 @section('content')
   <div class="content">
-
-    @if ($errors->any())
+    @if(session('error'))
         <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+            {{ session('error') }}
         </div>
+    @elseif(session('success'))
+      <div class="alert alert-success">
+          {{ session('success') }}
+      </div>
     @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
     <form class="create-form" action="{{  action('PostsController@store')  }}" method="post" enctype="multipart/form-data">
       {{csrf_field()}}
       <div class="form-group">

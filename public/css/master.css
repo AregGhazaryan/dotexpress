@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+.navbar{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+
 select:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 #000;
@@ -12,8 +20,9 @@ option:not(:checked) {
 }
 
 .navbar{
-  background: rgb(141,0,255);
-  background: rgba(141,0,255,1) !important;
+  /* background: rgb(141,0,255);
+  background: rgba(141,0,255,1) !important; */
+  background-image: linear-gradient(to right,#D200FF, #8D00FF);
   padding-left:10%;
   padding-right:10%;
 }
@@ -36,11 +45,13 @@ option:not(:checked) {
 .page-footer{
   display: block;
   color:white;
-  background: rgb(141,0,255);
+  background-image: linear-gradient(to right,#D200FF, #8D00FF);
   padding-left:10%;
   padding-right:10%;
   position: relative;
   bottom:0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 .page-footer a{
@@ -194,12 +205,12 @@ margin: 5px 3%;
 }
 .nav-link{
   transition:0.2s;
+  border-radius:5px;
 }
 
 .nav-link:hover{
   transition:0.2s;
   background-color:white !important;
-  border-radius:5px;
   color:rgb(141,0,255)!important;
 }
 
@@ -223,6 +234,7 @@ margin: 5px 3%;
     transition:0.2s;
     color: rgb(141,0,255) !important;
     background-color:white;
+    padding: 0.733em 1.1em !important;
 }
 
 .btn-search:hover{
@@ -232,7 +244,7 @@ margin: 5px 3%;
 }
 
 .create{
-  background-color: rgb(141,0,255);
+  background-color: #D200FF;
   border:none;
 }
 
@@ -293,4 +305,14 @@ margin: 5px 3%;
   -moz-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.75);
   color:rgb(141,0,255) !important;
+}
+
+
+.navbar img{
+  width: 150px;
+}
+
+.contact-body{
+  resize:none;
+  height: 300px;
 }

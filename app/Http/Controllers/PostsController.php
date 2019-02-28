@@ -53,8 +53,8 @@ class PostsController extends Controller
       $validate = $this->validate($request,[
         'name' => 'required',
         'description' => 'max:1000|required',
-        'p-image' => 'image|mimes:jpeg,png,jpg,gif|max:200000|required',
-        'images[]' => 'image|nullable|mimes:jpeg,png,jpg,gif|max:200000',
+        'p-image' => 'image|mimes:jpeg,png,jpg,gif|max:20000|required',
+        'images[]' => 'image|nullable|mimes:jpeg,png,jpg,gif|max:20000',
         'stock' => 'required|numeric',
         'price' => 'required|numeric',
         'category' => 'required',
@@ -122,7 +122,7 @@ if ($request->file('image3')) {
 }
 
         $post->save();
-        return redirect('/')->with('success','Post Created, Please Wait For Admin To Approve Your Post');
+        return redirect('/')->with('success','Post Successfully Created');
     }
 
     /**

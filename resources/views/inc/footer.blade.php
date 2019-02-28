@@ -42,7 +42,7 @@
                 <a href="/terms">Terms And Conditions</a>
               </li>
               <li>
-                <a href="/terms">Privacy Policy</a>
+                <a href="/privacy">Privacy Policy</a>
               </li>
             </ul>
 
@@ -57,7 +57,7 @@
 
             <ul class="list-unstyled">
               <li>
-                <a href="/about">How It Works</a>
+                <a href="/howitworks">How It Works</a>
               </li>
               <li>
                 <a href="/contact">Contact Us</a>
@@ -75,7 +75,8 @@
 
       </div>
       <!-- Grid row -->
-<div class="footer-copyright text-md-left pb-2">© <?php echo date("Y");?> Copyright : Areg Ghazaryan</div>
+<div class="footer-copyright text-md-left pb-2">© <?php echo date("Y");?> Copyright : DotExpress</div>
+
     </div>
     <!-- Footer Links -->
 

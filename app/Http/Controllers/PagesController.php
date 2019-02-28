@@ -1,14 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use App\Cart;
 use App\Order;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\ContactMail;
+use Carbon\Carbon;
 use Auth;
+use DB;
 
 
 class PagesController extends Controller
@@ -16,7 +19,7 @@ class PagesController extends Controller
 
   public function __construct()
 {
-$this->middleware('auth', ['except' => ['index', 'locations', 'message']]);
+$this->middleware('auth', ['except' => ['index', 'locations', 'message','terms', 'privacy','howitworks','contact', 'send']]);
 }
 
   public function index(){
@@ -24,16 +27,44 @@ $this->middleware('auth', ['except' => ['index', 'locations', 'message']]);
     return view('pages.index')->with('posts', $post);
   }
 
+  public function send(Request $request){
+    $validatedData = $request->validate([
+        'email' => 'required|string|email|max:255',
+        'body' => 'required|string|max:700',
+    ]);
+    $email = $request['email'];
+    $body = $request['body'];
+    $query = DB::table('support')->insert(
+    ['email' => $email, 'body' => $body]
+);
+    $email = $request['email'];
+    $job = (new ContactMail($email))->delay(Carbon::now()->addSeconds(5));
+    dispatch($job);
+    return redirect('/contact')->with('success','Thank you for your message, we will answer between 3 business days');
+  }
+
+
   public function locations(){
     return view('pages.locations');
   }
-
+  public function contact(){
+    return view('pages.contact');
+  }
+  public function howitworks(){
+    return view('pages.howitworks');
+  }
+  public function privacy(){
+    return view('pages.privacy');
+  }
   public function message(){
     return view('pages.message');
   }
 
   public function service(){
     return view('pages.service');
+  }
+  public function terms(){
+    return view('pages.terms');
   }
   public function profile($id){
     $post = User::where('id',$id)->firstOrFail();

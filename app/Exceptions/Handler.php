@@ -46,6 +46,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+      if ($exception instanceof \Illuminate\Http\Exceptions\PostTooLargeException) {
+
+     return \Illuminate\Support\Facades\Redirect::back()->withErrors(['msg' => 'The Message']);
+  }
+
+  return parent::render($request, $exception);
     }
 }

@@ -1,15 +1,8 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 Route::get('/', 'PagesController@index');
 Route::get('/category/{name}', 'CategoryController@index');
@@ -34,6 +27,14 @@ Route::post('/buy','OrderController@buy')->name('buy');
 Route::get('/approve/{id}','PostsController@approve');
 Route::get('/order/approve/{id}','PostsController@approveorder');
 Route::get('/profile/delete/{id}','PagesController@deleteprofile');
+Route::get('/terms','PagesController@terms');
 Route::get('/send/{id}', 'EmailController@send');
+Route::get('/privacy', 'PagesController@privacy');
+Route::get('/howitworks', 'PagesController@howitworks');
+Route::get('/contact', 'PagesController@contact');
+Route::post('/contact', 'PagesController@send');
+Route::get('/releases', function(){
+  return view('pages.releases');
+});
 Route::post('/checkout/buy', 'PostsController@checkoutbuy');
 Auth::routes();
