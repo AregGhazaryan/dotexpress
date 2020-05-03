@@ -1,7 +1,7 @@
 
 # DotExpress
 
-Dotexpress is a public ecommerce application template, ready to be branded and designed.
+DotExpress is a public ecommerce application template, ready to be branded and designed.
 
 ## Getting Started
 
