@@ -1,21 +1,19 @@
 @extends('layouts.core')
 @section('content')
-  <div class="content">
+<div class="content">
   <h1>How it works</h1>
 
 
-<p>Effective date: February 26, 2019</p>
+  <p>Effective date: May 03, 2020</p>
 
 
-<p>There are two type of users, one customer the other one seller, sellers can create posts which will show their product information and sell it with desirable price.
-Customers are users which can buy and order products online.</p>
+  <p>There are three types of users, customer, seller and admin, sellers can create posts which will show their product
+    information and sell it with desirable price.
+    Customers are users which can buy and order products online. Admin has all permissions and can view registered users
+    and delete them</p>
 
-
-<h2>Product Delivery</h2>
-
-<p>Products can be delievered only in Yerevan city, global shipping is not avaliable.</p>
-<hr>
-<h1>Acknowledgments</h1>
-<p>Font Awesome by Dave Gandy - http://fontawesome.io</p>
-      </div>
+  <hr>
+  <h1>Acknowledgments</h1>
+  <p>Font Awesome by Dave Gandy - http://fontawesome.io</p>
+</div>
 @endsection

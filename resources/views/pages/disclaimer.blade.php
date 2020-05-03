@@ -31,7 +31,7 @@
         <li>The name of the copyright owner</li>
     </ul>
 
-    <p>Effective date: {{date("d-m-Y")}}</p>
+    <p>Effective date: May 03, 2020</p>
 
 
 </div>
