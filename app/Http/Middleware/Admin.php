@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use Auth;
 use Closure;
 
 class Admin
@@ -15,8 +15,10 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-      if(auth()->user()->isAdmin == 1){
-        return $next($request);
-      }
+        if(Auth::user()->IsAdmin){
+            return $next($request);
+        }
+
+        return redirect()->route('home')->with('error', 'Unauthorized access');
     }
 }

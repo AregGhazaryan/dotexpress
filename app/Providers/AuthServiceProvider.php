@@ -25,6 +25,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('add-product', function ($user) {
+            if ($user->IsAdmin || $user->IsSeller) {
+                return true;
+            }
+        });
     }
 }

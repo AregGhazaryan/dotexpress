@@ -1,7 +1,7 @@
 @extends('layouts.core')
 @section('content')
-  <div class="content">
-    <div class="fav-page">
+  <div class="content container">
+    <div class="fav-page table-responsive">
 
       @if(!empty($products))
 
@@ -14,19 +14,21 @@
           <th scope="col"></th>
         </tr>
       </thead>
-@foreach($products as $items)
-    @foreach($items as $item)
+@foreach($products as $item)
 
         <tr>
-<td><img src="/storage/products/{{$item->image}}" style="width:200px;"></td>
-          <td><a href="product/{{$item->product}}">{{$item->name}}</a></td>
-          <td>{{$item->price}}$</td>
-
-
-          <td class="text-right"><a class='btn btn-danger' href="/wish/delete/{{$item->unique_id}}"><i class="fas fa-times"></i></a></td>
+        <td><a href="product/{{$item->product->id}}"><img src="{{$item->product->PrimaryImage ? asset('storage/product_image/'.$item->product->PrimaryImage->path) : asset('img/default_product.png')}}" style="width:200px;"></a></td>
+          <td><a href="product/{{$item->product->id}}">{{$item->product->name}}</a></td>
+          <td>{{$item->product->price}}$</td>
+          <td class="text-right">
+          <form action="{{route('wish.destroy', $item->id)}}" method="POST">
+            @csrf 
+            @method("DELETE")
+          <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i></button>
+          </form>
+          </td>
         </tr>
 
-      @endforeach
     @endforeach
     </table>
   @else

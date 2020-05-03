@@ -1,25 +1,6 @@
 @extends('layouts.core')
 @section('content')
   <div class="content container">
-    @if(session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @elseif(session('success'))
-      <div class="alert alert-success">
-          {{ session('success') }}
-      </div>
-    @endif
-
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
     <h1>Contact Support</h1>
     <h5>You can contact support with the form below or send an email to support@DotExpress.com</h5>
 <form class="mt-5" action="{{ action('PagesController@send')}}" method="post">
