@@ -71,11 +71,16 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'type' => $data['type'],
         ]);
-        $email = $data['email'];
-        $job = (new SendEmailJob($email))->delay(Carbon::now()->addSeconds(5));
-        dispatch($job);
+        if($data['type'] == 'customer'){
+            $user->roles()->attach(3);
+        }elseif($data['type'] == 'seller'){
+            $user->roles()->attach(2);
+        }
+
+        // $email = $data['email'];
+        // $job = (new SendEmailJob($email))->delay(Carbon::now()->addSeconds(5));
+        // dispatch($job);
 
         return $user;
     }
