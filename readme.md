@@ -15,6 +15,13 @@ The Users seeder contains the following users
 2. Seller (`id:2`, `name:Seller`, `email:seller@dotexpress.com`, `password:seller`)
 3. Customer (`id:3`, `name:Customer`, `email:customer@dotexpress.com`, `password:customer`)
 
+The Roles seeder contains the following roles 
+1. Admin (`id:1`, `name:Admin`, `machine_name:admin`)
+2. Seller (`id:2`, `name:Seller`, `machine_name:seller`)
+3. Customer (`id:3`, `name:Customer`, `machine_name:customer`)
+
+There's also an optional Products seeder which is just using faker to generate fake info.
+
 ## Built With
 
 * [Laravel 7.0](https://laravel.com)
