@@ -7,7 +7,7 @@ DotExpress is a public ecommerce application template, ready to be branded and d
 
 1. Copy `.env.example` file and rename it to `.env`, also insert the database credentials there.
 2. Run `php artisan key:generate` to generate a key for the app. 
-3. (Optional) Run `php artisan migrate:fresh && php artisan db:seed` to seed tables with dummy data
+3. (Optional) Run `php artisan migrate && php artisan db:seed` to seed tables with dummy data
 
 The Users seeder contains the following users 
 
